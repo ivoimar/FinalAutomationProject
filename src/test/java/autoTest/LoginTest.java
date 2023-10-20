@@ -59,7 +59,7 @@ public class LoginTest {
             userEditButton.click();
 
             System.out.println("Verify that container edit button is visible");
-            WebElement userEditForm;
+            WebElement userEditForm = driver.findElement(By.cssSelector("your-css-selector-for-user-edit-form"));
             Assert.assertTrue(userEditForm.isDisplayed());
 
             System.out.println("Populate form control name field with 'ivaylo'");

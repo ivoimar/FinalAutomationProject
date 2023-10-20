@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,12 +54,13 @@ public class LoginPage {
          }
 
          public void clickElement(WebElement element){
+
             wait.until(ExpectedConditions.elementToBeClickable(element));
         }
-        public void clickLoginButton(){
-            WebElement logninButton;
-            wait.until(ExpectedConditions.elementToBeClickable(logninButton));
-            logninButton.click();
+    public void clickLoginButton(){
+        WebElement logninButton = driver.findElement(By.cssSelector("your-css-selector-for-login-button"));
+        wait.until(ExpectedConditions.elementToBeClickable(logninButton));
+        logninButton.click();
 
     }
 

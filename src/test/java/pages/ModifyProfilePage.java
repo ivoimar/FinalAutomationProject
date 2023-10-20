@@ -21,19 +21,19 @@ public class ModifyProfilePage {
     @FindBy(css = ".container profile-edit")
     private WebElement profileEdit;
 
-    @FindBy(css = ("input[formcontrolname='username']"))
-            private WebElement formControlName;
+    @FindBy(css = "input[formcontrolname='username']")
+    private WebElement formControlName;
 
-    @FindBy(css = ("input[formcontrolname='email']"))
+    @FindBy(css = "input[formcontrolname='email']")
     private WebElement formControlEmail;
 
-    @FindBy(css = ("input[formcontrolname='password']"))
+    @FindBy(css = "input[formcontrolname='password']")
     private WebElement formControlPass;
 
-    @FindBy(css = ("input[formcontrolname='confirmPassword']"))
+    @FindBy(css = "input[formcontrolname='confirmPassword']")
     private WebElement formConfirmPass;
 
-    @FindBy(css = ("input[formcontrolname='publicInfo']"))
+    @FindBy(css = "input[formcontrolname='publicInfo']")
     private WebElement formPublicInfo;
 
     @FindBy(css = "button.btn.btn-primary[type='submit']")
@@ -45,22 +45,22 @@ public class ModifyProfilePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
-    public void editProfilePage(String username){
-        wait.until(ExpectedConditions.visibilityOf(editProfilePage()));
+    public void editUsername(String username) {
+        wait.until(ExpectedConditions.visibilityOf(formControlName));
         formControlName.sendKeys(username);
     }
-    public void editProfilePage(String email) {
-        wait.until(ExpectedConditions.visibilityOf(editProfilePage()));
+    public void editEmail(String email) {
+        wait.until(ExpectedConditions.visibilityOf(formControlName));
         formControlEmail.sendKeys(email);
     }
 
-    public void setFormControlPass(String password){
-        wait.until(ExpectedConditions.visibilityOf(editProfilePage()));
-        formControlPass.sendKeys();
+    public void setFormControlPass(String password) {
+        wait.until(ExpectedConditions.visibilityOf(formControlPass));
+        formControlPass.sendKeys(password);
     }
     public void setFormConfirmPass(String confirmPass) {
-        wait.until(ExpectedConditions.visibilityOf(editProfilePage()));
-        formConfirmPass.sendKeys();
+        wait.until(ExpectedConditions.visibilityOf(formConfirmPass));
+        formConfirmPass.sendKeys(confirmPass);
     }
     public void clickSaveBtn() {
 
