@@ -8,18 +8,18 @@
             </run>
         </groups>
         <classes>
-            <class name="com.example.tests.LoginTest" />
+            <class name="autoTest.LoginTest" />
         </classes>
     </test>
 
-    <test name="OtherTests">
+    <test name="OtherTests.Pages">
         <groups>
             <run>
-                <include name="otherTests" />
+                <include name="otherTests.Pages" />
             </run>
         </groups>
         <classes>
-            <class name="com.example.tests.OtherTest" />
+            <class name="autoTest.BaseTest" />
         </classes>
     </test>
 

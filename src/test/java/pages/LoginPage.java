@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static java.time.Duration.*;
-
 public class LoginPage {
 
         private WebDriver driver;
@@ -38,7 +36,6 @@ public class LoginPage {
         }
 
         public void populateUserName(String username) {
-
             wait.until(ExpectedConditions.visibilityOf(usernameField));
             usernameField.sendKeys(username);
         }
@@ -64,8 +61,12 @@ public class LoginPage {
 
     }
 
-        public void verifyLoginFormVisible() {
+        public boolean verifyLoginFormVisible() {
             wait.until(ExpectedConditions.visibilityOf(loginForm));
             loginForm.isDisplayed();
+            return loginForm.isDisplayed();
+        }
+
+    public void clickSaveBtn() {
     }
 }

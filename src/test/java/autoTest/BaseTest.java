@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -33,8 +34,8 @@ public class BaseTest {
         options.setExperimentalOption("prefs", prefs);
 
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3).toMillis(), TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5).toMillis(), TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
     }
 
