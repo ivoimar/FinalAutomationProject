@@ -22,6 +22,7 @@ public class LoginTest {
 
     }
 
+
     private WebDriver driver;
     private static final String LOGIN_URL = "http://training.skillo-bg.com/posts/all";
     private static final String USERNAME = "imarinov84@yahoo.com";
@@ -29,7 +30,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC\\.m2\\repository\\org\\seleniumhq\\selenium\\selenium-chrome-driver\\4.13.0.pom");
+        System.setProperty("webdriver.chrome.driver", "WebDriverManager.chromedriver().setup();");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }

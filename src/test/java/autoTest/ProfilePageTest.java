@@ -24,7 +24,7 @@ public class ProfilePageTest {
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "\\Users\\PC\\.m2\\repository\\org\\seleniumhq\\selenium\\selenium-chrome-driver\\4.13.0\\selenium-chrome-driver-4.13.0.pom");
+        System.setProperty("webdriver.chrome.driver", "WebDriverManager.chromedriver().setup();");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
