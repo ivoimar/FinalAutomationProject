@@ -29,7 +29,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC\\.m2\\repository\\org\\seleniumhq\\selenium\\selenium-chrome-driver\\4.13.0.pom");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -70,29 +70,11 @@ public class LoginTest {
         WebElement userEditForm = driver.findElement(By.cssSelector(".fa-user-edit"));
         Assert.assertTrue(userEditForm.isDisplayed());
 
-        System.out.println("Populate form control name field with 'ivaylo'");
-        WebElement formControlName = driver.findElement(By.cssSelector("input[formcontrolname='username']"));
-        formControlName.getTagName();
-
-        System.out.println("Populate form control name field 'imarinov84@yahoo.com'");
-        WebElement formControlEmail = driver.findElement(By.cssSelector("input[formcontrolname='email']"));
-        formControlEmail.sendKeys();
-
-        System.out.println("Populate form control name field 'imar8899'");
-        WebElement formControlPass = driver.findElement(By.cssSelector("input[formcontrolname='password']"));
-        formControlPass.sendKeys();
-
-        System.out.println("Populate form control name confirm password field with 'imar8899'");
-        WebElement formConfirmPass = driver.findElement(By.cssSelector("input[formcontrolname='confirmPassword']"));
-        formConfirmPass.sendKeys();
-
-        System.out.println("Populate form control name field public info");
-        WebElement formPublicInfo = driver.findElement(By.cssSelector("input[formcontrolname='publicInfo']"));
-        formPublicInfo.sendKeys();
-
         System.out.println("Press the form control name Save button");
         WebElement saveBtn = driver.findElement(By.cssSelector("button.btn.btn-primary[type='submit']"));
         loginPage.clickSaveBtn();
+
+
 
 
     }

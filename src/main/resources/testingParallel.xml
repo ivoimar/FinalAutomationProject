@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParallelTestSuite" parallel="tests">
+
+    <test name="TestOnChrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="autoTest.LoginTest"/>
+        </classes>
+    </test>
+
+
+</suite>

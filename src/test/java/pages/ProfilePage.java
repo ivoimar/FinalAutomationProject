@@ -17,7 +17,7 @@ public class ProfilePage {
     @FindBy(css = ".fa-plus-square")
     WebElement plusSquareButton;
 
-    @FindBy(css = ".edit-profile-pic'")
+    @FindBy(css = ".edit-profile-pic")
     WebElement editProfilePic;
 
     public ProfilePage(WebDriver driver) {
@@ -35,8 +35,18 @@ public class ProfilePage {
         wait.until(ExpectedConditions.elementToBeClickable(plusSquareButton));
         plusSquareButton.click();
     }
-    public void setEditProfilePic(){
+
+    public void setEditProfilePic() {
         wait.until(ExpectedConditions.elementToBeClickable(editProfilePic));
         editProfilePic.click();
     }
+
+    public boolean setProfilePageButton() {
+        return false;
+    }
+
+    public boolean setUsernameTitle() {
+        return false;
+    }
+
 }

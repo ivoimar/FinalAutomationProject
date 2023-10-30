@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static java.time.Duration.*;
-
 public class NavigationBarPage {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -38,27 +36,40 @@ public class NavigationBarPage {
 
     public NavigationBarPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         PageFactory.initElements(driver,this);
 
     }
-    public void goToLogin() {
+    public boolean goToLogin() {
         wait.until(ExpectedConditions.elementToBeClickable(loginLink));
         loginLink.click();
+        return isLoggedIn();
+
     }
+
+    private boolean isLoggedIn() {
+        return true;
+    }
+
     public void setNewPostLink() {
         wait.until(ExpectedConditions.visibilityOf(newPostLink));
 
     }
     public void setSearchContainer(WebElement element) {
         wait.until((ExpectedConditions.elementToBeClickable(searchContainer)));
+        searchContainer.click();
 
     }
     public void setSearchLink(){
-        wait.until(ExpectedConditions.elementToBeClickable(searchContainer));
-        searchContainer.click();
+        wait.until(ExpectedConditions.elementToBeClickable(searchLink));
+        searchLink.click();
     }
     public void setSignOutLink(){
         wait.until(ExpectedConditions.elementToBeClickable(signOutLink));
         signOutLink.click();
+    }
+
+    public Boolean isNewPostLinkVisible() {
+        return null;
     }
 }

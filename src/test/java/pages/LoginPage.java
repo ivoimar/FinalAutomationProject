@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.LoginPage;
+
 
 import java.time.Duration;
 
@@ -55,7 +57,7 @@ public class LoginPage {
             wait.until(ExpectedConditions.elementToBeClickable(element));
         }
     public void clickLoginButton(){
-        WebElement logninButton = driver.findElement(By.cssSelector("your-css-selector-for-login-button"));
+        WebElement logninButton = driver.findElement(By.id("nav-link-login"));
         wait.until(ExpectedConditions.elementToBeClickable(logninButton));
         logninButton.click();
 
