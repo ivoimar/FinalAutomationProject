@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 import pages.ModifyProfilePage;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 public class ModifyProfilePageTest {
 
@@ -25,7 +27,7 @@ public class ModifyProfilePageTest {
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "WebDriverManager.chromedriver().setup();");
+        System.setProperty("webdriver.chrome.driver", "WebDriverManager.chromedriver().setup()");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PROFILE_URl);
