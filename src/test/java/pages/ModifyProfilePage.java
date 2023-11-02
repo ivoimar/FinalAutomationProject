@@ -51,7 +51,7 @@ public class ModifyProfilePage {
         formControlName.sendKeys(username);
     }
     public void editEmail(String email) {
-        wait.until(ExpectedConditions.visibilityOf(formControlName));
+        wait.until(ExpectedConditions.visibilityOf(formControlEmail));
         formControlEmail.sendKeys(email);
     }
 

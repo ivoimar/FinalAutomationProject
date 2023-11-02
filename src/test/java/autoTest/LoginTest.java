@@ -81,7 +81,7 @@ public class LoginTest {
     }
 
     private boolean isLoggedIn() {
-        WebElement logoutButton = driver.findElement(By.id("logout-button")); // Примерен селектор за бутона за излизане от системата
+        WebElement logoutButton = driver.findElement(By.id("logout-button"));
         return logoutButton.isDisplayed();
     }
 
