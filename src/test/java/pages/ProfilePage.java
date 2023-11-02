@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class ProfilePage {
     public WebDriver driver;
     private WebDriverWait wait;
@@ -22,6 +24,7 @@ public class ProfilePage {
 
     public ProfilePage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
         ProfilePage profilePage = new ProfilePage(driver);
     }

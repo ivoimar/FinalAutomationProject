@@ -43,7 +43,7 @@ public class ModifyProfilePage {
     public ModifyProfilePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void editUsername(String username) {
