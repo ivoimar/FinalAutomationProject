@@ -29,12 +29,12 @@ public class ProfilePageTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     }
     @Test
     public void testProfilePage() {
-        driver.get("http://training.skillo-bg.com/users/4959");
+        driver.get(PROFILE_URL);
         Assert.assertEquals(driver.getCurrentUrl(),"http://training.skillo-bg.com/users/4959");
 
         System.out.println("Verify that the button of profile page link is visible");
@@ -44,7 +44,7 @@ public class ProfilePageTest {
 
         System.out.println("Verify that the Profile button is clickable");
         profilePage.setProfilePageButton();
-        WebElement profileButton = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("a#nav-link-profile")));
+        WebElement profileButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a#nav-link-profile")));
         profileButton.click();
 
         System.out.println("Visible username title");
