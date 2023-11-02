@@ -30,7 +30,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "WebDriverManager.chromedriver().setup()");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -39,6 +39,8 @@ public class LoginTest {
     public void testLogin() {
         driver.get(LOGIN_URL);
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.populateUserName(USERNAME);
+        loginPage.enterPassword(PASSWORD);
         loginPage.clickLoginButton();
         Assert.assertTrue(isLoggedIn(), "Login was not successful.");
 

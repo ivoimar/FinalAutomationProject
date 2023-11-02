@@ -32,7 +32,7 @@ public class LoginPage {
         public LoginPage(WebDriver driver) {
             this.driver = driver;
             PageFactory.initElements(driver, this);
-            wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 
         }
@@ -70,5 +70,8 @@ public class LoginPage {
         }
 
     public void clickSaveBtn() {
+    }
+
+    public void enterPassword(String password) {
     }
 }
