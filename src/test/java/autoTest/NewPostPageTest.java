@@ -30,7 +30,7 @@ public class NewPostPageTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         newPostPage = new NewPostPage(driver);
     }
 
@@ -52,7 +52,7 @@ public class NewPostPageTest {
 
         System.out.println("Verify that Browse button is clickable");
         newPostPage.setChooseFile();
-        WebElement chooseFile = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("choose-file")));
+        WebElement chooseFile = wait.until(ExpectedConditions.elementToBeClickable(By.id("choose-file")));
         chooseFile.click();
 
         System.out.println("Verify that drag and drop upload file container is clickable");
@@ -62,12 +62,12 @@ public class NewPostPageTest {
 
         System.out.println("Verify that custom switch button is clickable");
         newPostPage.setCustomSwitch();
-        WebElement customSwitch = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".span.custom-control-input[formcontrolname=\"postStatus\"]")));
+        WebElement customSwitch = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".custom-control-input[formcontrolname=\"postStatus\"]")));
         customSwitch.click();
 
         System.out.println("Verify that create post submit button is clickable");
         newPostPage.setSubmitBtn();
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id(".create-post")));
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("create-post")));
         submitButton.click();
     }
     @AfterMethod

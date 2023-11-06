@@ -12,6 +12,7 @@ import java.time.Duration;
 public class ModifyProfilePage {
     public final String HOME_URL = "http://training.skillo-bg.com/posts/all";
     public final String PROFILE_URL = HOME_URL + "/users/4959";
+
     public String PROFILE_URl;
     private WebDriver driver;
     private WebDriverWait wait;
@@ -22,7 +23,7 @@ public class ModifyProfilePage {
     @FindBy(css = ".container profile-edit")
     private WebElement profileEdit;
 
-    @FindBy(css = "input[formcontrolname='username']")
+    @FindBy(css = "('input[formcontrolname=\"username\"]')")
     private WebElement formControlName;
 
     @FindBy(css = "input[formcontrolname='email']")

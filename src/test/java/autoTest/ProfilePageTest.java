@@ -19,7 +19,10 @@ import java.time.Duration;
 public class ProfilePageTest {
     private WebDriver driver;
     private ProfilePageTest profilePage;
-    private static final String PROFILE_URL = "http://training.skillo-bg.com/users/4959";
+    private static final String HOME_URL = "http://training.skillo-bg.com/posts/all";
+    private static final String PROFILE_URL = HOME_URL + "/users/4959";
+    private static final String USERNAME = "imarinov84@yahoo.com";
+    private static final String PASSWORD = "imar8899";
     private WebDriverWait wait;
 
     @BeforeMethod
