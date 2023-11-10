@@ -24,7 +24,7 @@ public class LoginTest {
 
 
     private WebDriver driver;
-    private static final String LOGIN_URL = "http://training.skillo-bg.com/posts/all";
+    private static final String LOGIN_URL = "http://training.skillo-bg.com/users/login";
     private static final String USERNAME = "imarinov84@yahoo.com";
     private static final String PASSWORD = "imar8899";
 
