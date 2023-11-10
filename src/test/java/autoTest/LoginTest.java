@@ -83,7 +83,7 @@ public class LoginTest {
     }
 
     private boolean isLoggedIn() {
-        WebElement logoutButton = driver.findElement(By.id("logout-button"));
+        WebElement logoutButton = driver.findElement(By.cssSelector(".fa-sign-out-alt"));
         return logoutButton.isDisplayed();
     }
 
